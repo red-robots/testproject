@@ -14,76 +14,112 @@
  
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
             
             <!-- pulls info for fields from WP -->
             <?php
                 while ( have_posts() ) : the_post();
-                $name = get_field('name');
-                $telephone = get_field('telephone_number');
-                $email = get_field('email');
-                $website = get_field('website');
-                $antiSpam = antispambot( $email );
-                $image = get_field('image');
-                $description = get_field('description');
-                $form = get_field('form');
+                    $friday = get_field('friday');
+                    $saturday = get_field('saturday');
+                    $sunday = get_field('sunday_new');
+                    $monday = get_field('monday');
+                    $tuesday = get_field('tuesday');
+                    $wednesday = get_field('wednesday');                
+                    $thursday = get_field('thursday');
+                    $antiSpam = antispambot( $email );
+                    $image = get_field('image');
+                    
+                    $form = get_field('form');
                 // echo "<pre>";
-                // print_r ($image);
+                // print_r ($hours);
                 // echo "</pre>";
-            ?>
 
-            <?php if( !empty($image) ): ?>
+            if( !empty($image) ): ?>
                 <div class="image"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
             <?php endif; ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
                 <header class="entry-header">
                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-                </header><!-- .entry-header -->
+                </header>
+                <!-- .entry-header -->
                 <div class="too"></div>
                 
                 <!-- contact info card -->
-                <div class="card">
-                    <?php if( $name !='' ) { ?>
-                        <h4 class="name"><?php echo $name; ?></h4>
-                    <?php } ?>
-                    <div class="center">
-                        <?php if( $telephone !='' ) { ?>
-                            <div class="telephone"><i class="far fa-phone"></i> <?php echo $telephone; ?></div>
-                        <?php } ?>
-                        <?php if( $email !='' ) { ?>
-                            <div class="email"><?php echo $email; ?></div>
-                        <?php } ?>
-                        <?php if( $website !='' ) { ?>
-                            <div class="website"><?php echo $website; ?></div>
-                        <?php } ?>
+                <div class="hours-card">
+                    <div class="item1">
+                        <h4>Find Us</h4>
+                        <p>(704) 375-0831</p>
+                        </br>
+                        <p>220 East Blvd. Suite 200A</p>
+                        <p>Charlotte, NC 28203</p>
+                        <h4>Hours</h4>
+                        <ul>
+                            <li>
+                                <?php if( $friday !='' ) { ?>
+                                    Friday      <?php echo $friday; ?>
+                                <?php } ?>
+                            </li>
+                            <li>
+                                <?php if( $saturday !='' ) { ?>
+                                    Saturday    <?php echo $saturday; ?>
+                                <?php } ?>
+                            </li>
+                            <li>
+                                <?php if( $sunday !='' ) { ?>
+                                    Sunday      <?php echo $sunday; ?>
+                                <?php } ?>
+                            </li>
+                            <li>
+                                <?php if( $monday !='' ) { ?>
+                                    Monday      <?php echo $monday; ?>
+                                <?php } ?>
+                            </li>
+                            <li>
+                                <?php if( $tuesday !='' ) { ?>
+                                    Tuesday     <?php echo $tuesday; ?>
+                                <?php } ?>
+                            </li>
+                            <li>
+                                <?php if( $wednesday !='' ) { ?>
+                                    Wednesday   <?php echo $wednesday; ?>
+                                <?php } ?>
+                            </li>
+                            <li>
+                                <?php if( $thursday !='' ) { ?>
+                                    Thursday    <?php echo $thursday; ?>
+                                <?php } ?>
+                            </li>
+                        </ul>
                     </div>
-                    <?php if( $description !='' ) { ?>
-                        <div class="description"><?php echo $description; ?></div>
-                    <?php } ?>
+                    
+                    <div class="map item-2">
+                        <h3>Location</h3>
+                        <!--The div element for the map -->
+                        <div id="map"></div>
+                            <script>
+                                // Initialize and add the map
+                                function initMap() {
+                                    // The location of Uluru
+                                    var uluru = {lat: 35.2109, lng: -80.857121};
+                                    // The map, centered at Uluru
+                                    var map = new google.maps.Map(
+                                        document.getElementById('map'), {zoom: 12, center: uluru});
+                                    // The marker, positioned at Uluru
+                                    var marker = new google.maps.Marker({position: uluru, map: map});
+                                }
+                            </script>
+
+                            <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_MtpKZO-xgGIUegsR7ijD-mVB_51D2uM&callback=initMap">
+                            </script>
+                    </div>             
                 </div>
                 <br>
 
-                <!-- <div class="container">
-                    <form>
-                        
-                        <label for="fname">First Name</label>
-                        <input type="text" id="fname" name="firstname" placeholder="Your name...">
 
-                        <label for="lname">Last Name</label>
-                        <input type="text" id="fname" name="lastname" placeholder="Your last name...">
-
-                        <label for="contactemail">Email Address</label>
-                        <input type="text" id="contactemail" name="cemail" placeholder="Your email address..."
-
-                        <label for="subject">Subject</label>
-                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-                        <input type="submit" value="Submit">
-
-                    </form>
-                </div> -->
+    
 
                 <div class="entry-content">
                     <?php
@@ -96,7 +132,7 @@ get_header(); ?>
                     ?>
                 </div><!-- .entry-content -->
 
-                <footer class="entry-footer">
+                <!-- <footer class="entry-footer">
                     <?php
                         edit_post_link(
                             sprintf(
@@ -108,7 +144,7 @@ get_header(); ?>
                             '</span>'
                         );
                     ?>
-                </footer><!-- .entry-footer -->
+                </footer>.entry-footer -->
             </article><!-- #post-## -->
 
             <?php

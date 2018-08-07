@@ -9,6 +9,19 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+.bold {
+	font-weight: bold;
+}
+
+.large-text {
+	font-size: 30px;
+}
+
+.center {
+	vertical-align: middle;
+	height: 100%;
+}
+
 @import "headings";
 
 @import "copy";

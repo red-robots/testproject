@@ -29,7 +29,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="wrapper">
+		<div class="wrapper flex-header">
 			
 			<?php if(is_home()) { ?>
 	            <h1 class="logo">
