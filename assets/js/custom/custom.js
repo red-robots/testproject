@@ -77,16 +77,6 @@ jQuery(document).ready(function ($) {
 	    }, 500);
 	    return false;
 	});
-
-	/*
-	*
-	*	Nice Page Scroll
-	*
-	------------------------------------*/
-	$(function(){	
-		$("html").niceScroll();
-	});
-	
 	
 	/*
 	*
@@ -94,6 +84,7 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	$('.js-blocks').matchHeight();
+	$('.js-titles').matchHeight();
 
 	/*
 	*
