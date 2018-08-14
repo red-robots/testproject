@@ -16,7 +16,7 @@ get_header();
 	$parallax = get_field('parallax');
 ?>
 
-<div class="green"></div>
+<!-- <div class="green"></div> -->
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 			
@@ -80,7 +80,8 @@ get_header();
 								<!-- <img src="http://localhost:8888/bellaworks/testproject/wp-content/uploads/2018/07/michael-frattaroli-234665-unsplash.jpg" /> -->
 									<!-- Headshot -->
 									<?php if (!empty($headshot)) { ?>
-										<img class="headshot" src="<?php echo $headshot['url'];?>" alt="<?php echo $headshot['alt']; ?>"/>						
+										<!-- <i class="avatar fas fa-portrait fa-10x"></i> -->
+										<img src="<?php echo $headshot['url'];?>" alt="<?php echo $headshot['alt']; ?>"/>						
 									<?php } else { ?>
 										<i class="avatar fas fa-portrait fa-10x"></i>
 									<?php } ?>
@@ -98,15 +99,15 @@ get_header();
 									<div class="cta">
 										<!-- Email -->
 										<?php if (!empty($email)) { ?>
-											<div href="mailto:<?php echo $email; ?>"><i class="fas fa-envelope" href="<?php echo $email; ?>"></i></div>
+											<a href="mailto:<?php echo $email; ?>"><i class="fas fa-envelope" href="<?php echo $email; ?>"></i></a>
 										<?php } ?>
 										<!-- Phone -->
 										<?php if (!empty($phone)) { ?>
-											<div href="tel:+1<?php echo $phone ?>"><i class="fas fa-phone" href="<?php echo $phone; ?>"></i></div>
+											<a href="tel:+1<?php echo $phone ?>"><i class="fas fa-phone" href="<?php echo $phone; ?>"></i></a>
 										<?php } ?>
 										<!-- linkedIn -->
 										<?php if (!empty($linkedin)) { ?>
-											<div href="<?php echo $linkedin; ?>"><i class="fas fa-briefcase" href="<?php echo $linkedin; ?>"></i></div>
+											<a href="<?php echo $linkedin; ?>"><i class="fas fa-briefcase" href="<?php echo $linkedin; ?>"></i></a>
 										<?php } ?>
 									</div>
 								</div>
