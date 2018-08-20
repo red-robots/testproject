@@ -112,51 +112,9 @@
 	background-color: white;
 	text-align: center;
 
-	// h1 , .avatar {
-	// 	padding-top: 20px;
-	// }
-
-	// .employees {
-	// 	background-color: white;
-	
-	// 	padding: 20px;
-	// 	margin: 0;
-	// 	list-style: none;
-		
-	// 	@include flexbox();
-		
-	// 	-webkit-flex-flow: row wrap;
-	// 	justify-content: space-around;
-		
-	// 	.ecard {
-	// 		width: 175px;
-	// 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	// 		border-radius: 2px;
-			
-	// 		line-height: 15px;
-	// 		color: black;
-	// 		font-weight: bold;
-	// 		font-size: 10px;
-			
-	// 		& .row {
-	// 			display: flex;
-	// 			align-self: flex-end;
-	// 			background-color: #E5E5E5;
-	// 			color: black;
-
-	// 			.flex-row {
-	// 				padding-right: 10%;
-	// 				padding-left: 10%;
-	// 				color: #2B2B2B;
-	// 				flex-basis: 100%;
-	// 			}
-	// 		}
-
-	// 		a {
-	// 			margin-top: 10px;
-	// 		}
-	// 	}
-	// }
+	h1 {
+		padding-top: 20px;
+	}
 }
 
 .pricing-grid {
@@ -194,8 +152,13 @@
 			max-width: 150px;
 		}
 
+		h1 {
+			padding-top: 20px;
+		}
+
 		h2 {
 			font-size: 20px;
+			margin-bottom: 5px;
 		}
 
 		ul {
@@ -205,8 +168,9 @@
 		}
 		li {
 			margin: 0 0 5px 0;
-			padding: 0;
-			border-bottom: 1px solid #ccc;
+			padding-top: 15px;
+			border-top: 1px solid #ccc;
+			text-align: center;
 		}
 
 		& div.cta {
@@ -214,6 +178,10 @@
 			align-self: flex-end;
 			// background-color: rgba(0,0,0,.3);
 			padding: 5px;
+			a {
+				color: #ccc;
+				margin: 5px;
+			}
 		}
 		& > * {
 			flex: 1;
@@ -226,6 +194,7 @@
 	clear: both;
 	display: flex;
 	justify-content: space-around;
+	padding: 20px;
 
 	ul {
 		padding: 0px;
@@ -234,14 +203,14 @@
 	}
 
 	.item-1 {
-		flex: 1;
-		margin-right: 15px; 
+		// margin-right: 1500px; 
 	}
 
 	.item-2 {
-		flex: 2;
+		flex-grow: 2;
 		background: white;
 		padding: 20px;
+		margin-left: 20px;
 	}
 
 	#map {
@@ -275,6 +244,7 @@ li {
 
 .image {
 	margin-top: 0px;
+	width: 100%;
 }
 
 .logo {

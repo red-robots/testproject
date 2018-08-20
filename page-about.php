@@ -21,20 +21,17 @@ get_header();
 		<main id="main" class="site-main" role="main">
 			
 			<?php
-				$aboutimage = get_field('image-about');
+			$aboutimage = get_field('image-about');
 
-					if( !empty($aboutimage) ): ?>
-						<div class="image"><img src="<?php echo $aboutimage['url']; ?>" alt="<?php echo $aboutimage['alt']; ?>" /></div>
-					<?php endif; 
-			?>
+				if( !empty($aboutimage) ): ?>
+					<div class="image"><img src="<?php echo $aboutimage['url']; ?>" alt="<?php echo $aboutimage['alt']; ?>" /></div>
+				<?php endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header>
 				<!-- .entry-header -->
-
-				<div class="too"></div>
 
 					<!-- <?php
 						if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
@@ -119,7 +116,7 @@ get_header();
 								?>
 							</div>
 						</div>
-						<section class="test">
+						<!-- <section class="test">
 							<div class="sample js-blocks">
 								<p>akjfnksjdafb</p>
 							</div>
@@ -132,7 +129,7 @@ get_header();
 							<div class="sample js-blocks">
 								<p>akjfnksjdafb</p>
 							</div>
-						</section>
+						</section> -->
 					<?php
 					else :
 						esc_html_e( 'No employees!', 'text-domain' );

@@ -1818,25 +1818,27 @@ html[xmlns] .flexslider .slides{display:block}
 .faq{width:100;padding:10px;background:white;border-radius:5px}
 .faq ul{padding-left:0}
 .card-container{background-color:white;text-align:center}
+.card-container h1{padding-top:20px}
 .pricing-grid{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:0 auto;background-color:white;width:100%;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .pricing-grid .plan{text-align:center;-webkit-flex-basis:20%;-ms-flex-preferred-size:20%;flex-basis:20%;background-color:rgba(255,255,255,0.9);box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);text-align:center;border-radius:4px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin-bottom:15px}
 .pricing-grid .plan svg{display:inline-block;width:auto}
 .pricing-grid .plan img{display:inline-block;margin-left:auto;margin-right:auto;border-radius:4px;max-width:150px}
-.pricing-grid .plan h2{font-size:20px}
+.pricing-grid .plan h1{padding-top:20px}
+.pricing-grid .plan h2{font-size:20px;margin-bottom:5px}
 .pricing-grid .plan ul{margin:0;padding:0;list-style:none}
-.pricing-grid .plan li{margin:0 0 5px 0;padding:0;border-bottom:1px solid #ccc}
+.pricing-grid .plan li{margin:0 0 5px 0;padding-top:15px;border-top:1px solid #ccc;text-align:center}
 .pricing-grid .plan div.cta{width:100%;-webkit-align-self:flex-end;-ms-flex-item-align:end;align-self:flex-end;padding:5px}
+.pricing-grid .plan div.cta a{color:#ccc;margin:5px}
 .pricing-grid .plan>*{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%}
-.hours-card{clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around}
+.hours-card{clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;padding:20px}
 .hours-card ul{padding:0;margin:0;border:0}
-.hours-card .item-1{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;margin-right:15px}
-.hours-card .item-2{-webkit-box-flex:2;-webkit-flex:2;-ms-flex:2;flex:2;background:white;padding:20px}
+.hours-card .item-2{-webkit-box-flex:2;-webkit-flex-grow:2;-ms-flex-positive:2;flex-grow:2;background:white;padding:20px;margin-left:20px}
 .hours-card #map{height:400px;width:100%}
 .hours-card h4{text-align:center;margin-bottom:0}
 .hours-card h3{text-align:center;margin:0}
 li{list-style-type:none}
 .entry-title{position:relative;margin-top:-125px;margin-left:25%;float:left;color:#fff;padding:10px}
-.image{margin-top:0}
+.image{margin-top:0;width:100%}
 .logo{display:none}
 .left{float:left}
 .right{float:right}

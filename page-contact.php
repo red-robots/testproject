@@ -27,7 +27,7 @@ get_header(); ?>
                     $tuesday = get_field('tuesday');
                     $wednesday = get_field('wednesday');                
                     $thursday = get_field('thursday');
-                    $antiSpam = antispambot( $email );
+                    // $antiSpam = antispambot( $email );
                     $image = get_field('image');
                     
                     $form = get_field('form');
@@ -44,7 +44,6 @@ get_header(); ?>
                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 </header>
                 <!-- .entry-header -->
-                <div class="too"></div>
                 
                 <!-- contact info card -->
                 <div class="hours-card">
@@ -112,7 +111,7 @@ get_header(); ?>
                             </script>
 
                             <script async defer
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_MtpKZO-xgGIUegsR7ijD-mVB_51D2uM&callback=initMap">
+                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_MtpKZO-xgGIUegsR7ijD-mVB_51D2uM&callback=initMap">
                             </script>
                     </div>             
                 </div>
@@ -156,4 +155,4 @@ get_header(); ?>
 
 <?php
 // get_sidebar();
-// get_footer();
+get_footer();
