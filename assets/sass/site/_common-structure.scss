@@ -245,6 +245,7 @@ li {
 .image {
 	margin-top: 0px;
 	width: 100%;
+	z-index: 999;
 }
 
 .logo {
@@ -290,4 +291,30 @@ li {
 	width: 100%;
 	padding: 20%;
 	height: 100vh;
+}
+
+.home-description {
+	position: relative;
+	// float: left;
+	align-self: center;
+	color: #fff;
+	padding: 10px;
+}
+
+.home-title {
+	position: relative;
+	margin-top: -450px;
+	text-align: center;
+	float: none;
+	color: #fff;
+	padding: 10px;
+}
+
+.home-icons {
+	text-align: center;
+	margin-top: 300px;
+
+	.icons {
+		padding: 0 50px 0 50px;
+	}
 }

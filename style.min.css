@@ -1838,7 +1838,7 @@ html[xmlns] .flexslider .slides{display:block}
 .hours-card h3{text-align:center;margin:0}
 li{list-style-type:none}
 .entry-title{position:relative;margin-top:-125px;margin-left:25%;float:left;color:#fff;padding:10px}
-.image{margin-top:0;width:100%}
+.image{margin-top:0;width:100%;z-index:999}
 .logo{display:none}
 .left{float:left}
 .right{float:right}
@@ -1847,6 +1847,10 @@ li{list-style-type:none}
 .test{width:100%;float:left}
 .test .sample{width:28%;padding:20px;margin:1%;border:1px solid #000;float:left}
 .green{background-color:green;width:100%;padding:20%;height:100vh}
+.home-description{position:relative;-webkit-align-self:center;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;color:#fff;padding:10px}
+.home-title{position:relative;margin-top:-450px;text-align:center;float:none;color:#fff;padding:10px}
+.home-icons{text-align:center;margin-top:300px}
+.home-icons .icons{padding:0 50px 0 50px}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}

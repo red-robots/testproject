@@ -20,6 +20,7 @@ get_header(); ?>
 		<?php
 			while ( have_posts() ) : the_post();
 			$homeimage = get_field('homeimage');
+			$description = get_field('description');
 
 				if( !empty($homeimage) ): ?>
 					<div class="image"><img src="<?php echo $homeimage['url']; ?>" alt="<?php echo $homeimage['alt']; ?>" /></div>
@@ -27,18 +28,16 @@ get_header(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<?php the_title( '<h1 class="home-title">', '</h1>' ); ?>
 				</header>
+
+				<div class="home-description"><?php echo $description ?></div>
 				
-				<div>
-					<i class="fab fa-facebook-f"></i>
-					<i class="fab fa-instagram"></i>
-					<i class="fab fa-twitter"></i>
+				<div class="home-icons">
+					<a class="icons" href=#><i class="fab fa-facebook-f fa-lg"></i></a>
+					<a class="icons" href=#><i class="fab fa-instagram fa-lg"></i></a>
+					<a class="icons" href=#><i class="fab fa-twitter fa-lg"></i></a>
 				</div>
-			</article>
-
-
-				
 
             </article><!-- #post-## -->
 
