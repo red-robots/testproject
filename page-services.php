@@ -19,14 +19,14 @@ get_header(); ?>
 
                 <?php
                 while ( have_posts() ) : the_post();
-                    $faq = get_field('capabilities', 'option');
-                    $image = get_field('services-image');
+                    $services = get_field('capabilities', 'option');
+                    $image = get_field('service-image');
                 
                 if( !empty($image) ): ?>
                     <div class="image"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
                 <?php endif; ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header>
@@ -34,16 +34,17 @@ get_header(); ?>
                     <!-- // get_template_part( 'template-parts/content', 'page' );
 
                 // check if the repeater field has rows of data -->
-                <?php if( have_rows('capabilities') ):
-
-                    ?><div class="capabilities"><?php
+				<?php if( have_rows('capabilities') ): ?>
+				
+					<div class="capabilities"><?php
                     // loop through the rows of data
                     while ( have_rows('capabilities') ) : the_row(); ?>
-                        <ul>
-                            <!-- // display a sub field value -->
-                            <li class="bold"><?php the_sub_field('service-title'); ?></li>
-                            <li><?php the_sub_field('service-description'); ?></li>
-                        </ul>
+                        <div>
+							<!-- // display a sub field value -->
+							<i class="<?php the_sub_field('service-icon') ?> fa-5x">
+                            <h3 class="bold"><?php the_sub_field('service-title'); ?></h3>
+                            <p><?php the_sub_field('service-description'); ?></p>
+						</div>
                     <?php
                     endwhile;
                     ?> </div> <?php
