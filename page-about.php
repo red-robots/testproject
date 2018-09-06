@@ -116,20 +116,6 @@ get_header();
 								?>
 							</div>
 						</div>
-						<!-- <section class="test">
-							<div class="sample js-blocks">
-								<p>akjfnksjdafb</p>
-							</div>
-							<div class="sample js-blocks">
-								<p>akjfnksjdafb</p>
-								<p>akjfnksjdafb</p>
-								<p>akjfnksjdafb</p>
-								<p>akjfnksjdafb</p>
-							</div>
-							<div class="sample js-blocks">
-								<p>akjfnksjdafb</p>
-							</div>
-						</section> -->
 					<?php
 					else :
 						esc_html_e( 'No employees!', 'text-domain' );

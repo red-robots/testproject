@@ -7,7 +7,7 @@ function js_custom_init()
 	
 	// Register the Homepage Slides
   
-     $labels = array(
+  $labels = array(
 	'name' => _x('staff', 'post type general name'),
     'singular_name' => _x('Staff', 'post type singular name'),
     'add_new' => _x('Add New', 'Staff'),
@@ -42,15 +42,15 @@ function js_custom_init()
   // new post type
   $labels = array(
     'name' => _x('services', 'post type general name'),
-      'singular_name' => _x('Slide', 'post type singular name'),
-      'add_new' => _x('Add New', 'Slide'),
-      'add_new_item' => __('Add New Slide'),
+      'singular_name' => _x('Service', 'post type singular name'),
+      'add_new' => _x('Add New', 'Service'),
+      'add_new_item' => __('Add New Service'),
       'edit_item' => __('Edit services'),
-      'new_item' => __('New Slide'),
-      'view_item' => __('View services'),
-      'search_items' => __('Search staff'),
-      'not_found' =>  __('No staff found'),
-      'not_found_in_trash' => __('No staff found in Trash'), 
+      'new_item' => __('New Service'),
+      'view_item' => __('View Services'),
+      'search_items' => __('Search Services'),
+      'not_found' =>  __('No Services Found'),
+      'not_found_in_trash' => __('No Services Found in Trash'), 
       'parent_item_colon' => '',
       'menu_name' => 'services'
     );
@@ -69,7 +69,29 @@ function js_custom_init()
       'supports' => array('title','editor','custom-fields','thumbnail'),
     
     ); 
-    register_post_type('service',$args); // name used in query
+    register_post_type('services',$args); // name used in query
   // and here
   
   } // close custom post type
+
+/*
+##############################################
+			Custom Taxonomies
+*/
+add_action( 'init', 'build_taxonomies', 0 );
+ 
+function build_taxonomies() {
+// cusotm tax
+  register_taxonomy( 'custom_taxonomy', 'custom_post_type',
+	array( 
+    'hierarchical' => true, // true = acts like categories false = acts like tags
+    'label' => 'Organization Type', 
+    'query_var' => true, 
+    'rewrite' => true ,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array( 'slug' => 'services' ),
+    '_builtin' => true
+	) );
+	
+} // End build taxonomies

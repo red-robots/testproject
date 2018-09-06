@@ -33,108 +33,33 @@ get_header();
 				</header>
 				<!-- .entry-header -->
 
-					<!-- <?php
-						if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-							the_post_thumbnail( 'full' );
-						}
-					?> -->
-
-					<div class="parallax-window" data-parallax="scroll" 
-					data-image-src="<?php echo $parallax['url'];?>" alt="<?php echo $parallax['alt']; ?>"></div>
-
-					<!-- loop for employee cards -->
-					<?php 
-						$i = 0;
-						$contact = array();
-						$loop = new WP_Query ( array( 
-							'post_type' => 'employees',
-							'posts_per_page' => 9,
-							'paged' => $paged
-						));
-						if ( $loop->have_posts() ) : 
-						?>
-						<div class="card-container">
-							<h1>Staff</h1>
-							<div class="pricing-grid">		
-								<?php while ($loop->have_posts() ) : $loop->the_post();								
-									$title = get_field('staff_type');
-									$linkedin = get_field('linkedIn');
-									$email = get_field('email');
-									$phone = get_field('phone');
-									$headshot = get_field('photo');
-									$contact[] = $linkedin;
-									$contact[] = $email;
-									$contact[] = $phone;
-									// echo "<pre>";
-									// print_r($title);
-									// echo "</pre>";
-
-								?>
-								
-							<!-- GET TEMPLATE PART -->
-
-								<div class="plan">
-								<!-- <img src="http://localhost:8888/bellaworks/testproject/wp-content/uploads/2018/07/michael-frattaroli-234665-unsplash.jpg" /> -->
-									<!-- Headshot -->
-									<?php if (!empty($headshot)) { ?>
-										<!-- <i class="avatar fas fa-portrait fa-10x"></i> -->
-										<img src="<?php echo $headshot['url'];?>" alt="<?php echo $headshot['alt']; ?>"/>						
-									<?php } else { ?>
-										<i class="avatar fas fa-portrait fa-10x"></i>
-									<?php } ?>
-									<!-- Name -->
-									<h2><?php echo get_the_title(); ?></h2>
-									<!-- <div class="border"></div> -->
-									<ul class="features">
-										<!-- Position -->
-										<?php if (!empty($title)) { ?>
-											<li><?php echo $title; ?></li>
-										<?php } ?>
-										<!-- Contact -->
-										<?php if (!empty($contact)) ?>
-									</ul>			
-									<div class="cta">
-										<!-- Email -->
-										<?php if (!empty($email)) { ?>
-											<a href="mailto:<?php echo $email; ?>"><i class="fas fa-envelope" href="<?php echo $email; ?>"></i></a>
-										<?php } ?>
-										<!-- Phone -->
-										<?php if (!empty($phone)) { ?>
-											<a href="tel:+1<?php echo $phone ?>"><i class="fas fa-phone" href="<?php echo $phone; ?>"></i></a>
-										<?php } ?>
-										<!-- linkedIn -->
-										<?php if (!empty($linkedin)) { ?>
-											<a href="<?php echo $linkedin; ?>"><i class="fas fa-briefcase" href="<?php echo $linkedin; ?>"></i></a>
-										<?php } ?>
-									</div>
-								</div>
-								<?php
-									// reset array
-									$contact = array();
-									endwhile;
-									wp_reset_postdata();
-								?>
-							</div>
-						</div>
-						<!-- <section class="test">
-							<div class="sample js-blocks">
-								<p>akjfnksjdafb</p>
-							</div>
-							<div class="sample js-blocks">
-								<p>akjfnksjdafb</p>
-								<p>akjfnksjdafb</p>
-								<p>akjfnksjdafb</p>
-								<p>akjfnksjdafb</p>
-							</div>
-							<div class="sample js-blocks">
-								<p>akjfnksjdafb</p>
-							</div>
-						</section> -->
-					<?php
-					else :
-						esc_html_e( 'No employees!', 'text-domain' );
-					endif;
-					?>				
+                <?php
+                    $wp_query = new WP_Query();
+                    $wp_query->query(array(
+                    'post_type'=>'custom_post_type',
+                    'posts_per_page' => 10,
+                    'paged' => $paged,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'custom_taxonomy', // your custom taxonomy
+                            'field' => 'slug',
+                            'terms' => array( 'green', 'blue' ) // the terms (categories) you created
+                        )
+                    )
+                ));
+                if ($wp_query->have_posts()) : ?>
+                <?php while ($wp_query->have_posts()) : ?>
+                <?php $wp_query->the_post(); ?>	
+                    
+                    <li><?php the_title(); ?></li>
+                    
+                <?php endwhile;  ?>
+                <div class="clear"></div>
+                <?php 
+                // references pagination function in your functions.php file
+                    pagi_posts_nav(); ?>	
+                
+                <?php endif; // end of the loop. ?>			
 
 				<div class="entry-content">
 					<?php
