@@ -47,73 +47,75 @@ get_header(); ?>
                 
                 <!-- contact info card -->
                 <div class="hours-card">
-                    <div class="item1">
-                        <h4>Find Us</h4>
-                        <p>(704) 375-0831</p>
-                        </br>
-                        <p>220 East Blvd. Suite 200A</p>
-                        <p>Charlotte, NC 28203</p>
-                        <h4>Hours</h4>
-                        <ul>
-                            <li>
-                                <?php if( $friday !='' ) { ?>
-                                    Friday      <?php echo $friday; ?>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php if( $saturday !='' ) { ?>
-                                    Saturday    <?php echo $saturday; ?>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php if( $sunday !='' ) { ?>
-                                    Sunday      <?php echo $sunday; ?>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php if( $monday !='' ) { ?>
-                                    Monday      <?php echo $monday; ?>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php if( $tuesday !='' ) { ?>
-                                    Tuesday     <?php echo $tuesday; ?>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php if( $wednesday !='' ) { ?>
-                                    Wednesday   <?php echo $wednesday; ?>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php if( $thursday !='' ) { ?>
-                                    Thursday    <?php echo $thursday; ?>
-                                <?php } ?>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="map item-2">
-                        <h3>Location</h3>
-                        <!--The div element for the map -->
-                        <div id="map"></div>
-                            <script>
-                                // Initialize and add the map
-                                function initMap() {
-                                    // The location of Uluru
-                                    var uluru = {lat: 35.2109, lng: -80.857121};
-                                    // The map, centered at Uluru
-                                    var map = new google.maps.Map(
-                                        document.getElementById('map'), {zoom: 12, center: uluru});
-                                    // The marker, positioned at Uluru
-                                    var marker = new google.maps.Marker({position: uluru, map: map});
-                                }
-                            </script>
+                    <ul>
+                        <li>
+                            <h4>Find Us</h4>
+                            <p>(704) 375-0831</p>
+                            </br>
+                            <p>220 East Blvd. Suite 200A</p>
+                            <p>Charlotte, NC 28203</p>
+                            <h4>Hours</h4>
+                            <ul>
+                                <li>
+                                    <?php if( $friday !='' ) { ?>
+                                        Friday      <?php echo $friday; ?>
+                                    <?php } ?>
+                                </li>
+                                <li>
+                                    <?php if( $saturday !='' ) { ?>
+                                        Saturday    <?php echo $saturday; ?>
+                                    <?php } ?>
+                                </li>
+                                <li>
+                                    <?php if( $sunday !='' ) { ?>
+                                        Sunday      <?php echo $sunday; ?>
+                                    <?php } ?>
+                                </li>
+                                <li>
+                                    <?php if( $monday !='' ) { ?>
+                                        Monday      <?php echo $monday; ?>
+                                    <?php } ?>
+                                </li>
+                                <li>
+                                    <?php if( $tuesday !='' ) { ?>
+                                        Tuesday     <?php echo $tuesday; ?>
+                                    <?php } ?>
+                                </li>
+                                <li>
+                                    <?php if( $wednesday !='' ) { ?>
+                                        Wednesday   <?php echo $wednesday; ?>
+                                    <?php } ?>
+                                </li>
+                                <li>
+                                    <?php if( $thursday !='' ) { ?>
+                                        Thursday    <?php echo $thursday; ?>
+                                    <?php } ?>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="map">
+                            <h3>Location</h3>
+                            <!--The div element for the map -->
+                            <div id="map"></div>
+                                <script>
+                                    // Initialize and add the map
+                                    function initMap() {
+                                        // The location of Uluru
+                                        var uluru = {lat: 35.2109, lng: -80.857121};
+                                        // The map, centered at Uluru
+                                        var map = new google.maps.Map(
+                                            document.getElementById('map'), {zoom: 12, center: uluru});
+                                        // The marker, positioned at Uluru
+                                        var marker = new google.maps.Marker({position: uluru, map: map});
+                                    }
+                                </script>
 
-                            <script async defer
-                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_MtpKZO-xgGIUegsR7ijD-mVB_51D2uM&callback=initMap">
-                            </script>
-                    </div>             
+                                <script async defer
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_MtpKZO-xgGIUegsR7ijD-mVB_51D2uM&callback=initMap">
+                                </script>
+                        </li>
+                    </ul>             
                 </div>
                 <br>
 

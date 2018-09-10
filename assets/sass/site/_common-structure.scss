@@ -203,6 +203,7 @@
 	.plan {
 		text-align: left;
 		flex-basis: 45%;
+		flex-grow: 1;
 		background-color: rgba(255,255,255, 0.9);
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		// padding: 20px;
@@ -216,6 +217,7 @@
 
 		.icon {
 			margin-right: 50px;
+			color: #2A4760;
 		}
 
 		h2 {
@@ -241,10 +243,13 @@
 }
 
 .hours-card {
-	clear: both;
+	// clear: both;
 	display: flex;
 	justify-content: space-around;
 	padding: 20px;
+	flex-basis: 0;
+	flex-grow: 2;
+	flex-flow: row wrap;
 
 	ul {
 		padding: 0px;
@@ -252,11 +257,11 @@
 		border: 0px;
 	}
 
-	.item-2 {
+	.map {
 		flex-grow: 2;
 		background: white;
-		padding: 20px;
-		margin-left: 20px;
+		padding: 10px;
+		margin-left: 10px;
 	}
 
 	#map {
@@ -354,6 +359,12 @@ li {
 	float: none;
 	color: #fff;
 	padding: 10px;
+}
+
+@media only screen and (max-width: 704px) {
+    .home-description, .home-title {
+       color: black;
+    }
 }
 
 .home-icons {
