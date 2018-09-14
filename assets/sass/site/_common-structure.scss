@@ -102,6 +102,7 @@
 	padding: 10px;
 	background: white;
 	border-radius: 5px;
+	padding-top: 30px;
 
 	ul {
 		padding-left: 0px;
@@ -243,13 +244,12 @@
 }
 
 .hours-card {
-	// clear: both;
+	clear: both;
 	display: flex;
 	justify-content: space-around;
 	padding: 20px;
-	flex-basis: 0;
-	flex-grow: 2;
-	flex-flow: row wrap;
+	align-items: flex-start;
+	flex-direction: row;
 
 	ul {
 		padding: 0px;
@@ -262,6 +262,11 @@
 		background: white;
 		padding: 10px;
 		margin-left: 10px;
+		min-width: 400px;
+	}
+
+	.hours {
+		min-width: 200;
 	}
 
 	#map {
@@ -286,7 +291,7 @@ li {
 
 .entry-title {
 	position: relative;
-	margin-top: -125px;
+	margin-top: -50px;
 	margin-left: 25%;
 	float: left;
 	color: #fff;
@@ -374,4 +379,9 @@ li {
 	.icons {
 		padding: 0 50px 0 50px;
 	}
+}
+
+.page-title {
+	margin-top: 100px;
+	background-color: #fff;
 }

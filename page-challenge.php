@@ -36,30 +36,76 @@ get_header();
                 <?php
                     $wp_query = new WP_Query();
                     $wp_query->query(array(
-                    'post_type'=>'custom_post_type',
+                    'post_type'=> 'customers',
                     'posts_per_page' => 10,
                     'paged' => $paged,
                     'tax_query' => array(
                         array(
-                            'taxonomy' => 'custom_taxonomy', // your custom taxonomy
+                            'taxonomy' => 'customer_type', // your custom taxonomy
                             'field' => 'slug',
-                            'terms' => array( 'green', 'blue' ) // the terms (categories) you created
+                            'terms' => array( 'early', 'late', 'on-time' ) // the terms (categories) you created
                         )
                     )
                 ));
+
                 if ($wp_query->have_posts()) : ?>
-                <?php while ($wp_query->have_posts()) : ?>
-                <?php $wp_query->the_post(); ?>	
-                    
-                    <li><?php the_title(); ?></li>
-                    
-                <?php endwhile;  ?>
-                <div class="clear"></div>
+                <h3>Customers:</h3>
+                    <?php while ($wp_query->have_posts()) : ?>
+                        <?php $wp_query->the_post(); ?>	
+                            
+                            <div>
+                                <h3 class="titles"><?php the_title(); ?></h3>
+                                <div>
+                                    <div class="taxonomies">
+                                        <?php the_taxonomies(); ?>
+                                    </div>                                
+                                </div>
+                            </div>
+
+                        <?php endwhile;  ?>
+                    <div class="clear"></div>
                 <?php 
                 // references pagination function in your functions.php file
                     pagi_posts_nav(); ?>	
                 
-                <?php endif; // end of the loop. ?>			
+                <?php endif; // end of the loop. ?>
+                
+                <?php
+                    $wp_query = new WP_Query();
+                    $wp_query->query(array(
+                    'post_type'=> 'employees',
+                    'posts_per_page' => 10,
+                    'paged' => $paged,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'staff_type', // your custom taxonomy
+                            'field' => 'slug',
+                            'terms' => array( 'board', 'boss', 'kitchen-staff', 'manager' ) // the terms (categories) you created
+                        )
+                    )
+                ));
+
+                if ($wp_query->have_posts()) : ?>
+                <h3>Staff:</h3>
+                    <?php while ($wp_query->have_posts()) : ?>
+                        <?php $wp_query->the_post(); ?>	
+                            
+                            <div>
+                                <h3 class="titles"><?php the_title(); ?></h3>
+                                <div>
+                                    <div class="taxonomies">
+                                        <?php the_taxonomies(); ?>
+                                    </div>                                
+                                </div>
+                            </div>
+
+                        <?php endwhile;  ?>
+                    <div class="clear"></div>
+                <?php 
+                // references pagination function in your functions.php file
+                    pagi_posts_nav(); ?>	
+                
+                <?php endif; // end of the loop. ?>
 
 				<div class="entry-content">
 					<?php
